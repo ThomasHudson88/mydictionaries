@@ -85,8 +85,6 @@ print()
 print('*****  end section 4 ********')
 print()
 
-'''
-
 
 
 
@@ -100,6 +98,12 @@ for key in phonebook:
 for value in phonebook.values():
     print(value)
 
+for key, vlaue in phonebook.items():
+    print(f"The key is {key} and the vlaue is {value}")
+
+for item_touple in phonebook.items():
+    print(item_touple)
+
 
 print()
 print('*****  end section 5 ********')
@@ -107,13 +111,20 @@ print()
 
 
 
-'''
+
 
 print()
 print('*****  start section 6 - using get and clear ********')
 print()
+#this method gives a defualt if there is an error
 
+phone = phonebook.get('chris','defualt')
+print(phone)
+#if the key is nt found will get the defualt
 
+phonebook.clear()
+print(phonebook)
+#clears out all of the key value pairs in the dictionary
 
 
 
@@ -128,7 +139,11 @@ print()
 print('*****  start section 7 - using pop method ********')
 print()
 
-
+print(phonebook)
+remove  = phonebook.pop('Chris', 'not found')
+print(remove)
+print(phonebook)
+#dictionary is getting shorter and shorter, maybe remove them as processed
 
 
 
@@ -142,8 +157,12 @@ print()
 print()
 print('*****  start section 8 - using popitem ********')
 print()
-
-
+#give both the key and value pair at the same time
+print(phonebook)
+a = phonebook.popitem()
+print(a)
+print(phonebook)
+#always takng the last key value pair in the dictionary, supposed to be random
 
 
 
@@ -158,8 +177,15 @@ print()
 print('*****  start section 9 - using random and converting to list ********')
 print()
 
+#How to use the random method with a dictionary, use a work around, we can make a list out of dictionary
+#list_of_keys = list(phonebook) #defualt is the keys
+#print(list_of_keys) #prints the three names
 
+#random_key = random.choice(list_of_keys) #we imported random at the beggining
+#print(random_key)
+#print(phonebook[random_key])
 
+print(f"Random Number: {phonebook[random.choice(list(phonebook))]}")
 
 
 print()
