@@ -3,6 +3,7 @@ We have a dictionary of produce with their per unit cost, the number of units so
 since it was manually entered. Print out the details of any produce that has in inaccurate total. Print both the stated total from the dictionary
 as well as the calculated total that shows the discrepancy.
 '''
+import math
 
 ProduceDictionary={
     'Potatoes': {
@@ -207,3 +208,20 @@ ProduceDictionary={
     }
 }
 
+#Print out the produce that doesn't match up
+#Iterate through the dictionaires and also have a conditional statement
+
+#Create an Interable loop for the dictionary
+
+# Cost * Amt = Calc
+# IF Calc != total
+#print
+
+for key in ProduceDictionary:
+    stated_total = ProduceDictionary.get(key)['total']
+    calc = round(ProduceDictionary.get(key)['amt_sold'] * ProduceDictionary.get(key)['cost'],2)
+    
+    if stated_total != calc:
+        print(f"produce name: {key}")
+        print(f"Calculated total: ${calc}")
+        print(f"Stated Total: ${stated_total}\n")
